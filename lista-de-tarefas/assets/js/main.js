@@ -1,4 +1,4 @@
-function listaDeTarefas() {
+function funcListaDeTarefas() {
   const inputTarefa = document.querySelector(".input-tarefa");
   const btnTarefa = document.querySelector(".btn-tarefa");
   const tarefas = document.querySelector(".tarefas");
@@ -51,9 +51,10 @@ function listaDeTarefas() {
   function carregaTarefasSalvas() {
     const tarefasSalvas = localStorage.getItem("tarefas");
     listaDeTarefas = JSON.parse(tarefasSalvas);
+    if (!listaDeTarefas === ""){
     for (let tarefa of listaDeTarefas) {
       criaTarefa(tarefa);
-    }
+    }}
   }
   carregaTarefasSalvas();
 
@@ -78,4 +79,4 @@ function listaDeTarefas() {
   });
 }
 
-listaDeTarefas();
+funcListaDeTarefas();
