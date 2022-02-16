@@ -51,10 +51,9 @@ function funcListaDeTarefas() {
   function carregaTarefasSalvas() {
     const tarefasSalvas = localStorage.getItem("tarefas");
     listaDeTarefas = JSON.parse(tarefasSalvas);
-    if (!listaDeTarefas === ""){
     for (let tarefa of listaDeTarefas) {
       criaTarefa(tarefa);
-    }}
+    }
   }
   carregaTarefasSalvas();
 
