@@ -64,6 +64,11 @@ function funcListaDeTarefas() {
     criaTarefa(inputTarefa.value);
   });
 
+  btnTarefa.addEventListener("touchstart", function () {
+    if (!inputTarefa.value) return;
+    criaTarefa(inputTarefa.value);
+  });
+
   inputTarefa.addEventListener("keypress", function (e) {
     if (e.keyCode === 13) {
       if (!inputTarefa.value) return;
