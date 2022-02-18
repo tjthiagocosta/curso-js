@@ -1,4 +1,5 @@
-// Calculadora criada com Factory Function para exercitar os conceitos aprendidos no curso
+
+// Calculadora criada com Factory Function para exercitar os conceitos aprendidos no curso.
 
 function criaCalculadora() {
   return {
@@ -7,6 +8,15 @@ function criaCalculadora() {
 
     inicia() {
       this.cliqueBotoes();
+      this.pressionaEnter();
+    },
+
+    pressionaEnter() {
+      this.display.addEventListener("keyup", (e) => {
+        if (e.keyCode === 13) {
+          this.realizaConta();
+        }
+      });
     },
 
     realizaConta() {
